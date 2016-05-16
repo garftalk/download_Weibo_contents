@@ -10,8 +10,8 @@ def getContent(StrPage):
     cook = {"Cookie": ""}
     url = 'http://weibo.cn/xxxxxxxxxx/profile?page=' + StrPage		# 其中x为UID账号
     html = requests.get(url, cookies = cook)
-    reGetContent = re.compile(ur'<div class="c" id="M_(\w+)"><div><span class="ctt">(.*?)</span>.*?cmtfrm" class="cc">评论\[(\d)\]</a>.*?class="ct">(\d{2}月\d{2}日) ([\d:]{4,10})&nbsp;来自(.*?)</span>')
-    content = re.findall(reGetContent,html.text)
+    reOrigin = re.compile(ur'<div class="c" id="M_(\w+)"><div><span class="ctt">(.*?)</span>.*?cmtfrm" class="cc">评论\[(\d)\]</a>.*?class="ct">(\d{2}月\d{2}日) ([\d:]{4,10})&nbsp;来自(.*?)</span>')
+    content = re.findall(reOrigin,html.text)
     textToken = ''
     for i in range(len(content)):
         text = ''
