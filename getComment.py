@@ -50,12 +50,5 @@ def getComment(contentToken):   # 参数为每条微博对应的唯一的一个�
         f.close()
     print allComment
     return allComment
-
-def writeFile(contentToken, contents):
-    filename = contentToken + '的评论'
-    f = open(filename,'a')
-    f.write(contents)
-    f.write('\n')
-    f.close()
     
 getComment('') # 参数为每条微博唯一的字符串，点击评论之后能在地址中看到
